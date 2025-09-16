@@ -60,29 +60,7 @@
     <footer class="bg-dark text-white text-center p-3">
         <p>&copy; 2025 - Dibuat oleh Hen</p>
     </footer>
-
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    // Halaman index.html
-    if (window.location.pathname.includes("index.html")) {
-        const artikel = JSON.parse(localStorage.getItem("artikelBaru"));
-        if (artikel && artikel.tampil) {
-            const container = document.getElementById("extra-articles");
-            const card = document.createElement("div");
-            card.className = "card mb-3";
-            card.innerHTML = `
-                ${artikel.gambar ? `<img src="${artikel.gambar}" class="card-img-top" alt="gambar-artikel">` : ""}
-                <div class="card-body">
-                <h5 class="card-title">${artikel.judul}</h5>
-                <p class="card-text">${artikel.isi}</p>
-                <p><span class="badge bg-info">${artikel.kategori}</span>
-                    <span class="badge bg-secondary">${artikel.tag}</span></p>
-                </div>
-            `;
-            container.appendChild(card);
-        }
-    }
-    </script>
 </body>
 </html>
