@@ -2,74 +2,66 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Form Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Artikel - Website Praktikum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="text-center py-4 bg-primary text-white">
-        <h1>Formulir Pendaftaran</h1>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center p-4">
+        <h1>Form Tambah Artikel</h1>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-        <a class="navbar-brand" href="#">Menu</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="form.html">Form</a></li>
-            </ul>
-        </div>
-        </div>
-    </nav>
-
-    <main class="container my-4">
-        <form id="myForm" action="aksi.html" method="GET" class="bg-white p-4 rounded shadow mx-auto" style="max-width: 600px;">
+    <main class="container my-5">
+        <form id="articleForm">
+        <!-- Judul Artikel -->
         <div class="mb-3">
-            <label class="form-label">Nama Lengkap:</label>
-            <input type="text" name="nama" class="form-control" required>
+            <label for="judul" class="form-label">Judul Artikel</label>
+            <input type="text" class="form-control" id="judul" required>
         </div>
 
+        <!-- URL Gambar -->
         <div class="mb-3">
-            <label class="form-label">Jenis Kelamin:</label><br>
-            <input type="radio" name="gender" value="Laki-laki"> Laki-laki
-            <input type="radio" name="gender" value="Perempuan"> Perempuan
+            <label for="gambar" class="form-label">URL Gambar Artikel</label>
+            <input type="url" class="form-control" id="gambar" placeholder="https://example.com/gambar.jpg">
         </div>
 
+
+        <!-- Isi Artikel -->
         <div class="mb-3">
-            <label class="form-label">Program Studi:</label>
-            <select name="prodi" class="form-select">
+            <label for="isi" class="form-label">Isi Artikel</label>
+            <textarea class="form-control" id="isi" rows="3" required></textarea>
+        </div>
+
+        <!-- Radio Button -->
+        <div class="mb-3">
+            <label class="form-label">Kategori</label><br>
+            <input type="radio" name="kategori" value="Teknologi" required> Teknologi
+            <input type="radio" name="kategori" value="Edukasi"> Edukasi
+            <input type="radio" name="kategori" value="Umum"> Umum
+        </div>
+
+        <!-- Select -->
+        <div class="mb-3">
+            <label for="tag" class="form-label">Tag Artikel</label>
+            <select class="form-select" id="tag">
             <option value="Informatika">Informatika</option>
-            <option value="Sistem Informasi">Sistem Informasi</option>
-            <option value="Teknik Elektro">Teknik Elektro</option>
+            <option value="Jaringan">Jaringan</option>
+            <option value="Pemrograman">Pemrograman</option>
             </select>
         </div>
 
+        <!-- Checkbox -->
         <div class="mb-3">
-            <label class="form-label">Hobi:</label><br>
-            <input type="checkbox" name="hobi" value="Membaca"> Membaca
-            <input type="checkbox" name="hobi" value="Olahraga"> Olahraga
-            <input type="checkbox" name="hobi" value="Coding"> Coding
+            <label class="form-label">Tampilkan di Home?</label><br>
+            <input type="checkbox" id="tampil" checked> Ya
         </div>
 
-        <div class="mb-3">
-            <label class="form-label">Pesan/Kesan:</label>
-            <textarea name="pesan" rows="4" class="form-control"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-success w-100">Kirim</button>
+        <button type="submit" class="btn btn-success">Submit</button>
         </form>
     </main>
-
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 | Website Praktikum</p>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script src="script.js"></script>
 </html>
