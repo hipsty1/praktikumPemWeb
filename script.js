@@ -39,20 +39,21 @@ if (window.location.pathname.includes("aksi.html")) {
 }
 
 // Halaman index.html
-if (window.location.pathname.includes("index.html")) {
-    const artikel = JSON.parse(localStorage.getItem("artikelBaru"));
-    if (artikel && artikel.tampil) {
-        const container = document.getElementById("extra-articles");
-        const card = document.createElement("div");
-        card.className = "card mb-3";
-        card.innerHTML = `
-        <div class="card-body">
-            <h5 class="card-title">${artikel.judul}</h5>
-            <p class="card-text">${artikel.isi}</p>
-            <p><span class="badge bg-info">${artikel.kategori}</span>
-            <span class="badge bg-secondary">${artikel.tag}</span></p>
-        </div>
-        `;
-        container.appendChild(card);
+  if (window.location.pathname.includes("index.html")) {
+        const artikel = JSON.parse(localStorage.getItem("artikelBaru"));
+        if (artikel && artikel.tampil) {
+            const container = document.getElementById("extra-articles");
+            const card = document.createElement("div");
+            card.className = "card mb-3";
+            card.innerHTML = `
+                ${artikel.gambar ? `<img src="${artikel.gambar}" class="card-img-top" alt="gambar-artikel">` : ""}
+                <div class="card-body">
+                <h5 class="card-title">${artikel.judul}</h5>
+                <p class="card-text">${artikel.isi}</p>
+                <p><span class="badge bg-info">${artikel.kategori}</span>
+                    <span class="badge bg-secondary">${artikel.tag}</span></p>
+                </div>
+            `;
+            container.appendChild(card);
+        }
     }
-}
